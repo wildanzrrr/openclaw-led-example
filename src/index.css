@@ -1,0 +1,244 @@
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-surface: #1a1a1a;
+  --bg-card: #242424;
+  --text-primary: #e8e8e8;
+  --text-muted: #888;
+  --border: #333;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* App layout */
+.app {
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.header p {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Courier New', monospace;
+}
+
+/* Main area */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* LED component */
+.led-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.led-bulb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50% 50% 45% 45%;
+  position: relative;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.led-shine {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 30%;
+  height: 25%;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+.led-base {
+  width: 38px;
+  height: 18px;
+  background: linear-gradient(to bottom, #555, #333);
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #444;
+  border-top: none;
+}
+
+.led-legs {
+  display: flex;
+  gap: 14px;
+  margin-top: 2px;
+}
+
+.led-leg {
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(to bottom, #888, #555);
+  border-radius: 2px;
+}
+
+/* Status panel */
+.status-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.status-label {
+  color: var(--text-muted);
+}
+
+.status-value {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  transition: color 0.3s ease;
+}
+
+.status-time {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+/* Control buttons */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.btn {
+  padding: 0.7rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  letter-spacing: 0.03em;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-off {
+  background: #2a2a2a;
+  color: #ccc;
+  border-color: #444;
+}
+
+.btn-off.active {
+  background: #3a3a3a;
+  border-color: #666;
+  box-shadow: 0 0 0 2px #555;
+}
+
+.btn-red {
+  background: rgba(255, 32, 32, 0.15);
+  color: #ff6060;
+  border-color: rgba(255, 32, 32, 0.4);
+}
+
+.btn-red.active {
+  background: rgba(255, 32, 32, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 32, 32, 0.5);
+}
+
+.btn-green {
+  background: rgba(0, 238, 68, 0.12);
+  color: #44ff88;
+  border-color: rgba(0, 238, 68, 0.35);
+}
+
+.btn-green.active {
+  background: rgba(0, 238, 68, 0.25);
+  box-shadow: 0 0 0 2px rgba(0, 238, 68, 0.5);
+}
+
+.btn-blue {
+  background: rgba(16, 96, 255, 0.15);
+  color: #4488ff;
+  border-color: rgba(16, 96, 255, 0.4);
+}
+
+.btn-blue.active {
+  background: rgba(16, 96, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(16, 96, 255, 0.5);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+}
+
+.footer code {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app {
+    padding: 1.5rem 1rem;
+  }
+}

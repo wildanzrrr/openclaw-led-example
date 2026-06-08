@@ -1,0 +1,8 @@
+services:
+  led-control:
+    build: .
+    ports:
+      - "5173:3000"
+    environment:
+      - PORT=3000
+    restart: unless-stopped
