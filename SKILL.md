@@ -1,10 +1,12 @@
-# SKILLS.md — LED Control Dashboard
+---
+name: led-control
+description: "Control an RGB LED simulator via HTTP API. Use when: turning LED red, green, blue, or off; setting LED color; reading LED state; automating LED control from bots, webhooks, or natural language commands."
+argument-hint: "LED state to set: RED, GREEN, BLUE, or OFF"
+---
 
-> This document is intended for AI agents, automation systems, and bots.
+# LED Control Dashboard
 
-## Purpose
-
-This application simulates an RGB LED. Agents can control the LED state through simple HTTP requests. The visual display updates immediately in any open browser window.
+Control an RGB LED simulator through simple HTTP requests. The visual display updates immediately in any open browser window.
 
 Default URL: `http://localhost:5173` (dev) or `http://localhost:3000` (production/Docker)
 
