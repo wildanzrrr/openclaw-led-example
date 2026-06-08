@@ -12,12 +12,12 @@ Default URL: `http://localhost:5173` (dev) or `http://localhost:3000` (productio
 
 ## Available States
 
-| State | Effect |
-|-------|--------|
-| `OFF` | LED appears dark gray, no glow |
-| `RED` | LED glows bright red |
-| `GREEN` | LED glows bright green |
-| `BLUE` | LED glows bright blue |
+| State   | Effect                         |
+| ------- | ------------------------------ |
+| `OFF`   | LED appears dark gray, no glow |
+| `RED`   | LED glows bright red           |
+| `GREEN` | LED glows bright green         |
+| `BLUE`  | LED glows bright blue          |
 
 ---
 
@@ -30,6 +30,7 @@ curl http://localhost:5173/api/state
 ```
 
 Response:
+
 ```json
 {
   "state": "GREEN"
@@ -99,12 +100,12 @@ curl -X POST http://localhost:5173/api/state \
 
 Convert natural language commands to LED states:
 
-| Natural language | API state |
-|-----------------|-----------|
-| red, turn red, set red | `RED` |
-| green, turn green, set green | `GREEN` |
-| blue, turn blue, set blue | `BLUE` |
-| off, turn off, disable | `OFF` |
+| Natural language             | API state |
+| ---------------------------- | --------- |
+| red, turn red, set red       | `RED`     |
+| green, turn green, set green | `GREEN`   |
+| blue, turn blue, set blue    | `BLUE`    |
+| off, turn off, disable       | `OFF`     |
 
 ---
 
